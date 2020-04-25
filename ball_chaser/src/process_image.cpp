@@ -64,16 +64,17 @@ void process_image_callback(const sensor_msgs::Image img)
 	        white_flag = true;
                 if (j <= 1100) {
 	    	    z = .1;
-		    //break;
+		    break;
                 }
 	        else if(j > 1100 && j < 1300) {
 		    z = 0;
-		    //break;
 		    //add linear_x drive command, here
+		    x = .1;
+		    break;
 	        }
 	        else if(j >= 1300) {
 		    z = -.1;
-		    //break;
+		    break;
 	        }
             }
 	}
