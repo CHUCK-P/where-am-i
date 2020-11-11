@@ -75,6 +75,10 @@
     </visual>
 
   </link>
+  <gazebo reference="left_wheel">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+
 
   <link name='right_wheel'>
     
@@ -104,7 +108,9 @@
 
   </link>
 
-
+  <gazebo reference="right_wheel">
+    <material>Gazebo/Grey</material>
+  </gazebo>
 
 
   <link name='left_rear_wheel'>
@@ -135,6 +141,10 @@
 
   </link>
 
+  <gazebo reference="left_rear_wheel">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
   <link name='right_rear_wheel'>
     
     <inertial>
@@ -163,7 +173,9 @@
 
   </link>
 
-
+  <gazebo reference="right_rear_wheel">
+    <material>Gazebo/Black</material>
+  </gazebo>
 
   <link name='camera'>
     
