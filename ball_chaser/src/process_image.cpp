@@ -51,6 +51,9 @@ void process_image_callback(const sensor_msgs::Image img)
     //    move_arm_center();
 
     int white_pixel = 255;
+    int red = 0;
+    int green = 0;
+    int blue = 0;
     bool white_flag = false;
     float x, z;
     x = 0;
@@ -58,9 +61,14 @@ void process_image_callback(const sensor_msgs::Image img)
 
     // Loop through each pixel in the image and check if there's a bright white one
     for (int i = 0; i < img.height; i++) {
-	for (int j=0; j < img.step; ++j) {
+	for (int j=0; j < img.step; j+=3) {
+		// step through each channel of each pixel
+		red = j;
+		green = j+1;
+		blue = j+2;
 
-            if (img.data[i * img.step + j] == white_pixel) {
+
+            if (img.data[i * img.step + red] == white_pixel && img.data[i * img.step + green] == white_pixel && img.data[i * img.step + blue] == white_pixel) {
 	        white_flag = true;
                 if (j <= 1100) {
 	    	    z = .1;
