@@ -70,17 +70,17 @@ void process_image_callback(const sensor_msgs::Image img)
 
             if (img.data[i * img.step + red] == white_pixel && img.data[i * img.step + green] == white_pixel && img.data[i * img.step + blue] == white_pixel) {
 	        white_flag = true;
-                if (j <= 1100) {
+                if (j <= img.step/3) {
 	    	    z = .1;
 		    break;
                 }
-	        else if(j > 1100 && j < 1300) {
+	        else if(j > img.step/3 && j < 2*img.step/3) {
 		    z = 0;
 		    //add linear_x drive command, here
 		    x = .1;
 		    break;
 	        }
-	        else if(j >= 1300) {
+	        else if(j >= 2*img.step/3) {
 		    z = -.1;
 		    break;
 	        }
