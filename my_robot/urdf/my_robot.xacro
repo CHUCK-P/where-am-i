@@ -235,6 +235,9 @@
 
   </link>
 
+  <gazebo reference="hokuyo">
+    <material>Gazebo/Green</material>
+  </gazebo>
   
   <joint type="continuous" name="left_wheel_hinge">
     <origin xyz="0 0.15 0" rpy="0 0 0"/>
